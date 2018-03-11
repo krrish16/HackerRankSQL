@@ -1,0 +1,85 @@
+/*Basic Select Challenges (using MySQL System)*/
+
+/*1.Revising the Select Query I*/
+
+SELECT * FROM CITY WHERE COUNTRYCODE = 'USA' AND POPULATION >100000;
+
+/*2.Revising the Select Query II*/
+
+SELECT NAME FROM CITY WHERE COUNTRYCODE = 'USA' AND POPULATION >120000;
+
+/*3.Select All*/
+
+SELECT * FROM CITY
+
+/*4.SELECT BY ID*/
+
+SELECT * FROM CITY WHERE ID = '1661';
+
+/*5.Japanese Cities' Attributes*/
+
+SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+/*6.Japanese Cities' Names*/
+
+SELECT NAME FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+/*7.Weather Observation Station 1*/
+
+SELECT CITY,STATE FROM STATION;
+
+/*8.Weather Observation Station 3*/
+
+SELECT DISTINCT CITY FROM STATION 
+WHERE MOD(ID,2) = 0;
+
+/*9.Weather Observation Station 4*/
+
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
+
+/*10.Weather Observation Station 5*/
+
+SELECT CITY, CHAR_LENGTH(CITY) FROM STATION ORDER BY CHAR_LENGTH(CITY), CITY LIMIT 1; 
+SELECT CITY, CHAR_LENGTH(CITY) FROM STATION ORDER BY CHAR_LENGTH(CITY) DESC, CITY LIMIT 1;
+
+/*11.Weather Observation Station 6*/
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) IN ('A','E','I','O','U');
+
+/*12.Weather Observation Station 7*/
+
+SELECT DISTINCT CITY FROM STATION WHERE RIGHT(CITY,1) IN ('A','E','I','O','U');
+
+/*13.Weather Observation Station 8*/
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) IN ('A','E','I','O','U') AND RIGHT(CITY,1) IN ('A','E','I','O','U');
+ 
+/*14.Weather Observation Station 9*/
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) NOT IN ('A','E','I','O','U');
+
+/*15.Weather Observation Station 10*/
+
+SELECT DISTINCT CITY FROM STATION WHERE RIGHT(CITY,1) NOT IN ('A','E','I','O','U');
+
+/*16.Weather Observation Station 11*/
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) NOT IN ('A','E','I','O','U') OR RIGHT(CITY,1) NOT IN ('A','E','I','O','U');
+ 
+/*17.Weather Observation Station 12*/
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) NOT IN ('A','E','I','O','U') AND RIGHT(CITY,1) NOT IN ('A','E','I','O','U');
+
+/*18.Higher Than 75 Marks*/
+
+SELECT NAME FROM STUDENTS WHERE MARKS > 75 ORDER BY RIGHT(NAME, 3), ID ASC;
+
+/*19.Employee Names*/
+
+SELECT NAME FROM EMPLOYEE ORDER BY NAME ASC
+
+/*20.Employee Salaries*/
+
+SELECT NAME FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS < 10 ORDER BY EMPLOYEE_ID ASC;
+
+
